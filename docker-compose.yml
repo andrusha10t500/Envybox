@@ -1,0 +1,49 @@
+version: "2"
+services:
+
+  backend:
+    container_name: backend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /var/www/laravel
+    restart: unless-stopped
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./:/var/www/laravel
+    networks:
+      - app-network
+
+
+  server:
+    container_name: server
+    image: nginx:latest
+    working_dir: /var/www/laravel
+    restart: unless-stopped
+    ports:
+      - "9090:80"
+      - "4431:443"
+    volumes:
+      - ./:/var/www/laravel
+      - ./docker/nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf
+      - ./docker/nginx/log/:/var/log/nginx/
+    networks:
+      - app-network
+
+  db_Envybox:
+    container_name: db_Envybox
+    image: mysql:5.7
+    restart: unless-stopped
+    ports:
+      - "3310:3306"
+    environment:
+      MYSQL_DATABASE: Envybox
+      MYSQL_ROOT_PASSWORD: Envybox
+    networks:
+      - app-network
+
+#Docker Networks
+networks:
+  app-network:
+    driver: bridge
