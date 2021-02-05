@@ -13,3 +13,11 @@
     <li>MySQL</li>
     <li>Docker</li>
 </ui>
+<h3>Для запуска</h3>
+<ui>
+    <li>docker-compose build</li>
+    <li>docker-compose up -d</li>
+    <li>docker-compose exec -T backend php artisan key:generate</li>
+    <li>docker-compose exec -T backend php artisan migrate</li>
+</ui>
+
