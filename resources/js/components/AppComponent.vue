@@ -9,10 +9,8 @@
             <input v-model="appeal" class="form-control" type="text" id="appeal" >
             <input class="btn btn-success" type="button" value="создать" @click="submit_function" >
         </div>
-        <div v-if="errors" class="container">
-            <div v-for="error in errors" >
-                <p>{{ error }}</p>
-            </div>
+        <div v-if="errors.length" class="container">
+            <p class="text-danger">{{ errors }}</p>
         </div>
     </div>
 </template>
@@ -39,6 +37,7 @@
                     })
                     .then(response => {
                         this.response_form = response.data.data;
+                        this.errors = response.data.error;
                         alert(this.response_form);
                     })
                     .catch(error => {

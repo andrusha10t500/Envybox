@@ -1974,8 +1974,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -1997,6 +1995,7 @@ __webpack_require__.r(__webpack_exports__);
         "appeal": this.appeal
       }).then(function (response) {
         _this.response_form = response.data.data;
+        _this.errors = response.data.error;
         alert(_this.response_form);
       })["catch"](function (error) {
         _this.errors = error;
@@ -37726,15 +37725,10 @@ var render = function() {
       })
     ]),
     _vm._v(" "),
-    _vm.errors
-      ? _c(
-          "div",
-          { staticClass: "container" },
-          _vm._l(_vm.errors, function(error) {
-            return _c("div", [_c("p", [_vm._v(_vm._s(error))])])
-          }),
-          0
-        )
+    _vm.errors.length
+      ? _c("div", { staticClass: "container" }, [
+          _c("p", { staticClass: "text-danger" }, [_vm._v(_vm._s(_vm.errors))])
+        ])
       : _vm._e()
   ])
 }
@@ -50203,8 +50197,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/leo/document/Envybox/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/leo/document/Envybox/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/leo/Документы/Envybox/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/leo/Документы/Envybox/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
