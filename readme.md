@@ -12,6 +12,8 @@
     <li>Vue.js</li>
     <li>MySQL</li>
     <li>Docker</li>
+    <li>Bootstrap</li>
+    <li>axios</li>
 </ui>
 <h3>Для запуска</h3>
 <ui>
