@@ -14,7 +14,7 @@ class BidController extends Controller
         //Валидация
         $validate = Validator::make($request->all(), [
             'name' => 'required|min:4',
-            'phone' => 'numeric|min:2',
+            'phone' => 'numeric|digits_between:6,11',
             'appeal' => 'required'
         ]);
         if(!$validate->fails()) {

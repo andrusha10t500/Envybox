@@ -9,7 +9,7 @@
             <input v-model="appeal" class="form-control" type="text" id="appeal" >
             <input class="btn btn-success" type="button" value="создать" @click="submit_function" >
         </div>
-        <div v-if="errors.length" class="container">
+        <div v-if="errors" class="container">
             <p class="text-danger">{{ errors }}</p>
         </div>
     </div>
@@ -27,6 +27,11 @@
                 errors : []
             }
         },
+        updated() {
+            if(this.response_form != null) {
+                alert(this.response_form);
+            }
+        },
         methods : {
             submit_function : function() {
                 axios
@@ -38,14 +43,11 @@
                     .then(response => {
                         this.response_form = response.data.data;
                         this.errors = response.data.error;
-                        alert(this.response_form);
                     })
                     .catch(error => {
                         this.errors=error;
                         console.log(error);
                     })
-
-
             }
         }
     }

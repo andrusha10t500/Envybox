@@ -1985,6 +1985,11 @@ __webpack_require__.r(__webpack_exports__);
       errors: []
     };
   },
+  updated: function updated() {
+    if (this.response_form != null) {
+      alert(this.response_form);
+    }
+  },
   methods: {
     submit_function: function submit_function() {
       var _this = this;
@@ -1996,7 +2001,6 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (response) {
         _this.response_form = response.data.data;
         _this.errors = response.data.error;
-        alert(_this.response_form);
       })["catch"](function (error) {
         _this.errors = error;
         console.log(error);
@@ -37725,7 +37729,7 @@ var render = function() {
       })
     ]),
     _vm._v(" "),
-    _vm.errors.length
+    _vm.errors
       ? _c("div", { staticClass: "container" }, [
           _c("p", { staticClass: "text-danger" }, [_vm._v(_vm._s(_vm.errors))])
         ])
