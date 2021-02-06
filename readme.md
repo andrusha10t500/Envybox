@@ -2,20 +2,19 @@
 <ui>
     <li>Сделать форму обратной связи</li>
     <li>При сохранении заявки использовать паттерн фабрика:</li>
-        <ui>
-            <li>Абстрактный класс - <a href="https://github.com/andrusha10t500/Envybox/blob/master/app/Bids.php">Bids</a></li>
-
-        </ui>
+    <ul>
+        <li>Абстрактный класс - <a href="https://github.com/andrusha10t500/Envybox/blob/master/app/Bids.php">Bids</a></li>
+    </ul>
     <li>Реализовать структуру, чтобы можно было добавлять новые места для хранения заявок, например другая база данных или email</li>
     <li>Изначально реализовать сохранение в базу и в файл</li>
-        <ui>
-            <li>Класс для сохранения в файл - <a href="https://github.com/andrusha10t500/Envybox/blob/master/app/Bids_in_File.php">Bids_in_File</a></li>
-            <li>Класс для сохранения в бд - <a href="https://github.com/andrusha10t500/Envybox/blob/master/app/Bids_in_DB.php">Bids_in_DB</a></li>
-        </ui>
-    <li>Валидация данных на бекенде</li>
-        <ui>
-            <li>Контроллер - <a href="https://github.com/andrusha10t500/Envybox/blob/master/app/Http/Controllers/BidController.php"></a></li>
-        </ui>
+    <ul>
+        <li>Класс для сохранения в файл - <a href="https://github.com/andrusha10t500/Envybox/blob/master/app/Bids_in_File.php">Bids_in_File</a></li>
+        <li>Класс для сохранения в бд - <a href="https://github.com/andrusha10t500/Envybox/blob/master/app/Bids_in_DB.php">Bids_in_DB</a></li>
+    </ul>
+    <li>Валидация данных на бэкенде</li>
+    <ul>
+        <li>Контроллер - <a href="https://github.com/andrusha10t500/Envybox/blob/master/app/Http/Controllers/BidController.php">BidController</a></li>
+    </ul>
 </ui>
 <h3>Использованные инструменты</h3>
 <ui>
