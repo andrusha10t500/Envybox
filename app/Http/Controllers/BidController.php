@@ -17,16 +17,17 @@ class BidController extends Controller
             'phone' => 'numeric|digits_between:6,11',
             'appeal' => 'required'
         ]);
+        //Проверка валидации:
         if(!$validate->fails()) {
 
-            //Saving in DB
+            //Сохранений в БД
             $this->saving_in_bd(new Bids_in_DB(
                 $request['name'],
                 $request['phone'],
                 $request['appeal']
             ));
 
-            //Saving in file
+            //Сохранение в файл
             $this->saving_in_file(new Bids_in_File(
                 $request['name'],
                 $request['phone'],

@@ -28,6 +28,7 @@
             }
         },
         updated() {
+            //Во время обновления показать сообщение "Заявка добавлена"
             if(this.response_form != null) {
                 alert(this.response_form);
             }
@@ -35,6 +36,7 @@
         methods : {
             submit_function : function() {
                 axios
+                    //Отправляем post запрос с данными на маршрут /index
                     .post("/index",{
                         "name" : this.name,
                         "phone" : this.phone,
