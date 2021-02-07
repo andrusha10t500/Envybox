@@ -3,12 +3,13 @@
         <div class="form">
             <label for="name">Введите имя</label>
             <input v-model="name" class="form-control" type="text" id="name" >
-            <label for="phone">Введите телефон</label>
+            <label for="phone">Введите телефон (Введите в виде xxx-xxx-xx-xx)</label>
             <input v-model="phone" class="form-control" type="text" id="phone" >
             <label for="appeal">Введите обращение</label>
             <input v-model="appeal" class="form-control" type="text" id="appeal" >
             <input class="btn btn-success" type="button" value="создать" @click="submit_function" >
         </div>
+        <input type="button" value="скачать файл" @click="get_file">
         <div v-if="errors" class="container">
             <p class="text-danger">{{ errors }}</p>
         </div>
@@ -49,6 +50,16 @@
                     .catch(error => {
                         this.errors=error;
                         console.log(error);
+                    })
+            },
+            get_file : function() {
+                axios
+                    .get('/getfile')
+                    .then(response => {
+                        this.errors=response.data.error;
+                    })
+                    .catch(error => {
+                        this.errors=response.data.error;
                     })
             }
         }
