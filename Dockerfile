@@ -5,8 +5,6 @@ WORKDIR /var/www/laravel
 RUN apt-get update \
     && apt-get install -y \
         git \
-        nodejs \
-        npm \
         zip \
         libmcrypt-dev \
         libfreetype6-dev \
@@ -16,6 +14,10 @@ RUN apt-get update \
     && docker-php-ext-install -j$(nproc) gd
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+#install nvm
+RUN wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+RUN source ~/.profile
 
 COPY . .
 
